@@ -1,28 +1,55 @@
-#### Description:
-Assume that you are working in a consultancy company and one of your client is running an e-commerce company. They are interested in understanding the customer behavior regarding the shopping. They have already collected the users’ session data for a year. Each row belongs to a different user. The “Made_purchase” is an indicator that whether the user has made a purchase or not during that year. Your client is also interested in predicting that column using other attributes of the users. The client also informs you that the data is collected by non-experts. So, it might have some percentage of error in some columns.
+# E-commerce Shopper Behavior Analysis  
 
-#### Evaluation:
-The evaluation metric for this competition is [Mean F1-Score](https://en.wikipedia.org/wiki/F-score). The F1 score, commonly used in information retrieval, measures accuracy using the statistics precision. The F1 metric weights recall and precision equally, and a good retrieval algorithm will maximize both precision and recall simultaneously. Thus, moderately good performance on both will be favored over extremely good performance on one and poor performance on the other.
+This project focuses on analyzing and predicting customer shopping behavior for an e-commerce client using user session data collected over a year. The objective is to identify patterns influencing purchases and build a predictive model for the `Made_Purchase` column.  
 
-#### Submission Format:
-The file should contain a header and have the following format: ``` id,Made_Purchase 1,False ```
+---
 
-#### Files:
-- train.csv - the training set
-- test.csv - the test set
-- sample_submission.csv - a sample submission file in the correct format
+## Dataset Overview  
 
-#### Columns:
-- HomePage: Number of times visited this page
-- HomePage_Duration: Total number of duration spent on this page.
-- LandingPage: Number of times visited this page
-- LandingPage_Duration: Total number of duration spent on this page.
-- ProductDesriptionPage Number of times visited this page
-- ProductDescriptionPage_Duration: Total number of duration spent on this page.
-- GoogleMetric-Bounce Rate: Whenever a user comes to any one web-page of the website and he/she does not go to any other page and exits from the website from the same page, then this activity done by the user is called Bounce. And the percentage of the total number of times the user visiting our website and bounce it, is called Bounce Rate
-- GoogleMetric-Exit Rate: The bounce rate is calculated based on the user exiting a website after visiting one page. But some users exit from the second, third, fourth, or any other page of our website, then those visitors’ data help determine the exit rate. The percentage of the total number of times the user to our website who do not exit from the first page (Landing Page) but exit after exploring other website pages is called the Exit Rate.
-- GoogleMetric-Page Value: Page Value is the average value for a page that a user visited before landing on the goal page or completing an Ecommerce transaction.
-- SeasonalPurchase: It is a weight indicator to track the seasonal purchase. If a user makes a purchase during any seasonal time (Mother’s Day, Diwali, Valentine's Day), we will assign based on internal heuristic.
-- Month_ SeasonalPurchase: Month of the special day considered for seasonal purchase.
+The dataset consists of the following files:  
 
-The other attributes like, OS, Search Engine, Zone, Type of Traffic, Customer Type, Gender, Cookies Setting, Education, Marital Status and Weekend Purchase are self-explanatory variables.
+- **`train.csv`**: Training data with user attributes and purchase indicators.  
+- **`test.csv`**: Test data for predictions.  
+- **`sample_submission.csv`**: Example submission format.  
+
+### Key Features  
+
+1. **Page Metrics**  
+   - Visit counts and durations for `HomePage`, `LandingPage`, and `ProductDescriptionPage`.  
+
+2. **Google Metrics**  
+   - `Bounce Rate`, `Exit Rate`, and `Page Value` provide insights into user engagement and exit behavior.  
+
+3. **Seasonal Indicators**  
+   - `SeasonalPurchase` and `Month_SeasonalPurchase` capture purchase trends during seasonal events.  
+
+4. **Demographics and Contextual Attributes**  
+   - Includes `OS`, `Search Engine`, `Zone`, `Type of Traffic`, `Customer Type`, `Gender`, and more.  
+
+---
+
+## Approach  
+
+1. **Preprocessing**: Cleaning and handling inaccuracies in user data.  
+2. **EDA**: Identifying patterns and relationships between features.  
+3. **Feature Engineering**: Enhancing predictive capabilities through derived metrics.  
+4. **Modeling**: Training machine learning models to predict purchase behavior.  
+5. **Evaluation**: Optimizing results based on F1-Score, focusing on precision and recall balance.  
+
+---
+
+## Tools and Dependencies  
+
+- **Scikit-learn**: Model development and evaluation.  
+- **Pandas, NumPy**: Data handling and preprocessing.  
+- **XGBoost**: Advanced gradient boosting for predictions.  
+- **Matplotlib, Seaborn**: Data visualization.  
+- **Imbalanced-learn**: Addressing class imbalances.  
+
+---
+
+## Business Impact  
+
+- **Improved Engagement**: Insights into bounce and exit rates for better user retention.  
+- **Targeted Marketing**: Seasonal purchase patterns for campaign optimization.  
+- **Enhanced Conversions**: Data-driven strategies to boost sales performance.  
